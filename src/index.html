@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="dBbalanceApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="dBbalanceApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="dBbalanceApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="da" ng-app="dBApp" class="no-js" ng-controller="coreController as vm">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="fragment" content="!" />
+    <title ng-bind="vm.titleService.title">dB-balance</title>
+    <meta name="description" content="Musikstudie i midtjylland">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/images/logo_64x64.png">
+
+    <link rel="stylesheet" href="../../bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="../../bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bower_components/angular-carousel/dist/angular-carousel.min.css">
+
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link rel="stylesheet" href="components/player/player.css" />
+    <link rel="stylesheet" href="components/gallery/gallery.css">
+    <link rel="stylesheet" href="components/navigation/navigation.css">
+
+    <script src="../../bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body ng-keyup="vm.handleKeyPress($event)">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">Din browser er <strong>forældet</strong>. <a href="http://browsehappy.com/">Opdater din browser</a> for at sikre en god oplevelse.</p>
+    <![endif]-->
+    <noscript>
+        <div class="jumbotron text-center">
+            <p class="text-danger  bg-danger">Din browser har ikke aktiveret JavaScript. Dette er nødvendigt for at kunne vise siden.</p>
+        </div>
+    </noscript>
+
+    <div class="loading-page" ng-if="vm.showSpinner">
+        <span class="glyphicon glyphicon-headphones spinning"></span>
+    </div>
+    
+    <!-- <div fb-like="vm.facebookPageUrl"></div> -->
+    
+    <div class="container content animate-move" ng-class="{'move-right'  : !some}">
+        <nav db-navigation 
+             db-navigation-player="vm.player.status" 
+             db-navigation-player-stop="vm.player.stop()"
+             db-navigation-is-collapsed="some">
+        </nav>
+    
+        <section    class="animate-gallery row row-margin gallery" 
+                    ng-cloak 
+                    ng-show="vm.visibilityService.gallery">
+            <div    db-gallery 
+                    db-gallery-model="vm.galleryService.images" 
+                    db-gallery-current-index="vm.galleryService.currentIndex" 
+                    class="text-center padding-left-00 padding-right-00"
+                    id="gallery">
+            </div>
+        </section>
+        
+        <section    class="animate-player row rounded-box color-box padding-25 row-margin" 
+                    ng-show="vm.visibilityService.player" 
+                    ng-cloak 
+                    db-player 
+                    db-player-status="vm.player.status"
+                    id="player">
+        </section>
+        
+        <main ui-view></main>
+        
+        <footer>
+            <div class="row">
+                <div class="col-xs-12 rounded-box padding-05 color-box" ng-include="'layout/footer.html'">
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+        
+    <!-- Bower components -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../bower_components/angular/angular.min.js"></script>
+    <script src="../../bower_components/ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../../bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../bower_components/angular-carousel/dist/angular-carousel.min.js"></script>
+    <script src="../../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../../bower_components/angular-scroll/angular-scroll.min.js"></script>
+    <script src="../../bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="../../bower_components/angulike/angulike.js"></script>
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="../../bower_components/ng-facebook/ngFacebook.js"></script>
+
+    <!-- App -->
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="components/directives.module.js"></script>
+
+    <!-- Services -->
+    <script src="components/services/services.module.js"></script>
+    <script src="components/services/text.service.js"></script>
+    <script src="components/services/title.service.js"></script>
+    <script src="components/services/visibility.service.js"></script>
+    <script src="components/services/gallery.service.js"></script>
+    
+    <!-- Filters -->
+    <script src="components/filters/filters.module.js"></script>
+    <script src="components/filters/lineBreak.filter.js"></script>
+    <script src="components/filters/toTrusted.filter.js"></script>
+
+    <!-- Core -->
+    <script src="components/core/core.module.js"></script>
+    <script src="components/core/core.controller.js"></script>
+
+    <!-- Home -->
+    <script src="components/home/home.module.js"></script>
+    <script src="components/home/home.route.js"></script>
+    <script src="components/home/home.controller.js"></script>
+
+    <!-- Equipment -->
+    <script src="components/equipment/equipment.module.js"></script>
+    <script src="components/equipment/equipment.route.js"></script>
+    <script src="components/equipment/equipment.controller.js"></script>
+
+    <!-- Demo -->
+    <script src="components/demo/demo.module.js"></script>
+    <script src="components/demo/demo.route.js"></script>
+    <script src="components/demo/demo.controller.js"></script>
+
+    <!-- Live -->
+    <script src="components/live/live.module.js"></script>
+    <script src="components/live/live.route.js"></script>
+    <script src="components/live/live.controller.js"></script>
+
+    <!-- Feedback -->
+    <script src="components/feedback/feedback.module.js"></script>
+    <script src="components/feedback/feedback.route.js"></script>
+    <script src="components/feedback/feedback.controller.js"></script>
+
+    <!-- Contact -->
+    <script src="components/contact/contact.module.js"></script>
+    <script src="components/contact/contact.route.js"></script>
+    <script src="components/contact/contact.controller.js"></script>
+
+    <!-- Player -->
+    <script type="text/javascript" src="../../bower_components/jPlayer/dist/jplayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="components/player/jplayer.playlist.js"></script>
+    <script type="text/javascript" src="components/player/player.directive.js"></script>
+
+    <!-- Gallery -->
+    <script type="text/javascript" src="components/gallery/gallery.module.js"></script>
+    <script type="text/javascript" src="components/gallery/gallery.directive.js"></script>
+
+    <!-- Facebook feed -->
+    <script type="text/javascript" src="components/facebookfeed/facebookfeed.module.js"></script>
+    <script type="text/javascript" src="components/facebookfeed/facebookfeed.directive.js"></script>
+
+    <!-- ScrollToItem -->    
+    <script type="text/javascript" src="components/scrollToItem.directive.js"></script>
+    <script type="text/javascript" src="components/navigation/navigation.directive.js"></script>
+</body>
+    
+</html>

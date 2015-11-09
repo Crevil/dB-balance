@@ -1,0 +1,22 @@
+[{
+    "source": "assets/images/gallery/D1.jpg",
+    "description": "Nice image 1"
+}, {
+    "source": "assets/images/gallery/D2.jpg",
+    "description": "Nice image 2"
+}, {
+    "source": "assets/images/gallery/D3.jpg",
+    "description": "Nice image 3"
+}, {
+    "source": "assets/images/gallery/D4.jpg",
+    "description": "Nice image 4"
+}, {
+    "source": "assets/images/gallery/D5.jpg",
+    "description": "Nice image 5"
+}, {
+    "source": "assets/images/gallery/D6.jpg",
+    "description": "Nice image 6"
+}, {
+    "source": "assets/images/gallery/D7.jpg",
+    "description": "Nice image 7"
+}]

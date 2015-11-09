@@ -1,0 +1,18 @@
+# Build results
+dest/
+bower_components/
+node_modules/
+typings/
+
+# FTP credentials
+src/sftp-config.json
+
+# =========================
+# Windows detritus
+# =========================
+
+# Windows image file caches
+Thumbs.db
+
+# Mac desktop service store files
+.DS_Store

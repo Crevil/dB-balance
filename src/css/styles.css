@@ -1,0 +1,86 @@
+/* dB-balance styles css stylesheet */
+html {
+  background: url("../assets/images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  background-color: transparent;
+}
+
+* {
+  word-wrap: break-word;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.padding-05 { padding: 0.5em !important; }
+#player { padding: 2.5em !important; }
+.padding-right-00 {padding-right: 0 !important; }
+.padding-left-00 {padding-left: 0 !important; }
+
+.overflow-hide { overflow: hidden; }
+
+.float-right { float: right;}
+.float-left {float: left;}
+
+.color-box   { background-color: rgba(221, 225, 213, 1.0); }
+.color-muted { background-color: rgba(228, 231, 221, 1.0); }
+.color-dark  { background-color: rgba(86, 110, 52, 1.0);   }
+
+.text-muted { color: rgba(141, 149, 126, 1.0); }
+.text-dark { color: rgba(86, 110, 52, 1.0); }
+
+a { color: rgba(86, 110, 52, 1.0); }
+
+a:hover, a:focus { color: rgba(141, 149, 126, 1.0); }
+
+/* Above SM view port */
+@media (min-width: 768px) {
+  .rounded-nav {
+    border-radius: 2em;
+  }
+  
+  .rounded-15-bottom { border-radius: 1.5em 1.5em 0 0 !important; }
+  .rounded-box { border-radius: 2em !important; }
+  .padding-box { padding: 2.5em !important; }
+}
+
+@media (max-width: 768px) {
+  .rounded-nav {
+    border-top-right-radius: 0em !important;
+    border-bottom-right-radius: 0em !important;
+  }
+  
+  .rounded-box {
+    border-radius: 1em !important;
+  }
+  
+  .padding-box { padding: 0.5em !important; }
+}
+
+.glyphicon-lg {
+  font-size: 1.3em;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.loading-page {
+  top: 0;
+  left: 0;
+  position: absolute;
+  font-size: 10vh;
+  background-color: white;
+  opacity: 0.5;
+  height: 100vh;
+  padding-top: 45vh;
+  padding-left: 45vw;
+  width: 100%;
+}
+
+.pointer {
+  cursor: pointer;
+}

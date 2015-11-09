@@ -1,0 +1,4 @@
+<p class="text-muted text-center">
+    {{vm.footer.name}} &copy; <time><span ng-bind="{{vm.footer.date | date:'yyyy'}}"></span></time> {{vm.footer.address}}
+    <br /> CVR: {{vm.footer.cvr}} - Reg. Nr. {{vm.footer.bank.reg}} - Konto Nr. {{vm.footer.bank.num}} - <a href="mailto:{{vm.footer.contact.mail}}" target="_blank" title="{{vm.footer.contact.title}}">{{vm.footer.contact.mail}}</a>
+</p>

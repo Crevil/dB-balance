@@ -1,0 +1,24 @@
+{
+    "tracks": [{
+            "title": "Medley",
+            "artist": "Politiets Big Band",
+            "mp3": "http://www.db-balance.dk/music/Politiets-Big-Band-Medley.mp3"
+        }, {
+            "title": "Wiked Ways",
+            "artist": "Track One",
+            "mp3": "http://www.db-balance.dk/music/wiked-ways.mp3"
+        }, {
+            "title": "Wanna Live",
+            "artist": "Worn Out Rebels",
+            "mp3": "http://www.db-balance.dk/music/wanna-live.mp3"
+        }, {
+            "title": "But it's rock and roll",
+            "artist": "Wine By The Glass",
+            "mp3": "http://www.db-balance.dk/music/But_Its_Rock_And_Roll.mp3"
+        }, {
+            "title": "Riverside",
+            "artist": "Kasernekoret",
+            "mp3": "http://www.db-balance.dk/music/Riverside.mp3"
+        }
+    ]
+}

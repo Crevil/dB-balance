@@ -1,0 +1,23 @@
+<article ng-repeat="text in vm.data.texts" class="row row-margin row-flex">
+    <div    ng-class-even="{'col-xs-push-4' : text.attachment != '' && text.attachment != undefined}" 
+            ng-class="{'col-xs-12'  : text.attachment == '' || text.attachment != undefined,
+                       'col-xs-8'   : text.attachment != '' && text.attachment != undefined}" 
+            class="rounded-box color-box col-xs-12">
+
+            <div class="padding-box">
+                <h1>{{text.artist}}</h1>
+                
+                <p ng-bind-html="text.text | lineBreakFilter | toTrustedFilter"></p>
+            </div>
+    </div>
+
+    <div    class="col-xs-4"
+            ng-if="text.attachment != '' && text.attachment != undefined" 
+            ng-class-even="'col-xs-pull-8 padding-left-00'"
+            ng-class-odd="'padding-right-00'" >
+        <img    class="overflow-hide img-responsive center-block rounded-box" 
+                ng-src="assets/images/feedback/{{text.attachment}}" 
+                alt="{{text.artist}}"
+                title="{{text.artist}}" />
+    </div>
+</article>

@@ -1,0 +1,24 @@
+{
+  "name": "db-balance",
+  "version": "4.0.0",
+  "description": "dB-balance website",
+  "repository": {
+    "url": "https://github.com/Crevil/dB-balance.git"
+  },
+  "main": "app.js",
+  "scripts": {
+    "postinstall": "bower install && tsd reinstall",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1"
+  },
+  "author": "Bjørn Sørensen",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-typescript": "^2.8.2",
+    "http-server": "^0.6.1"
+  }
+}

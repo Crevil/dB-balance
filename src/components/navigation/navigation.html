@@ -1,0 +1,45 @@
+<div class="navbar navbar-db row color-box rounded-nav" role="navigation">
+    <div class="navbar-header text-center">
+        <a ui-sref="home" class="navbar-brand">
+            <img ng-src="assets/images/logo.png" alt="dB-balance logo">
+        </a>
+        <button type="button" class="navbar-toggle collapsed" ng-click="isCollapsed = !isCollapsed" aria-expanded="false">
+            <span class="sr-only">Skift menu</span>
+            <span class="icon-bar color-dark"></span>
+            <span class="icon-bar color-dark"></span>
+            <span class="icon-bar color-dark"></span>
+        </button>
+        <a class="visible-xs-block btn btn-danger btn-sx" ng-click="playerStop()" ng-show="playerStatus == 'play' && !visibilityService.player"><span class="glyphicon glyphicon-stop"></span></a>
+    </div>
+    
+    <div class="navbar-collapse anmiate-width" uib-collapse="isCollapsed" id="navbar-collapse">
+        <ul class="nav nav-justified navigation-links">
+            <li ui-sref-active="active"><a ng-click="isCollapsed = true" ui-sref="home">Forside</a></li>
+            <li ui-sref-active="active"><a ng-click="isCollapsed = true" ui-sref="equipment">Udstyr</a></li>
+            <li ui-sref-active="active"><a ng-click="isCollapsed = true" ui-sref="demo">Demo</a></li>
+            <li ui-sref-active="active"><a ng-click="isCollapsed = true" ui-sref="live">Live</a></li>
+            <li ui-sref-active="active"><a ng-click="isCollapsed = true" ui-sref="feedback">Referencer</a></li>
+            <li ui-sref-active="active"><a ng-click="isCollapsed = true" ui-sref="contact">Kontakt</a></li>
+            <li ng-class="{active: visibilityService.gallery}">
+                <a  ng-click="visibilityService.toggleGallery(); isCollapsed = true" 
+                    db-scroll-to-item 
+                    db-scroll-to="#gallery"
+                    db-scroll-enable="visibilityService.gallery">Galleri</a>
+            </li>
+            <li ng-class="{active: visibilityService.player}">
+                <a  class="btn-success btn-sx" 
+                    ng-click="visibilityService.togglePlayer(); isCollapsed = true" 
+                    db-scroll-to-item 
+                    db-scroll-to="#player"
+                    db-scroll-enable="visibilityService.player">Musikafspiller</a>
+            </li>
+            <li class="hidden-xs">
+                <a  class="btn-danger btn-sx"
+                    ng-show="playerStatus == 'play' && !visibilityService.player" 
+                    ng-click="playerStop(); isCollapsed = true">
+                    <span class="glyphicon glyphicon-stop"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

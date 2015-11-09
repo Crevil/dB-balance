@@ -1,0 +1,63 @@
+/* dB-balance layout css stylesheet */
+
+footer p {
+    margin: 0;
+}
+
+.gallery {
+    position: relative;
+}
+
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+.row-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.col-flex, .row-flex > div[class*='col-'] {
+    -webkit-flex: 1 1 auto;  /* Safari 6.1+ */
+    -ms-flex: 1 1 auto;  /* IE 10 */    
+    flex: 1 1 auto;
+}
+
+@media (min-width: 768px) {
+    .row-margin {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    
+    .row-margin-left {
+        margin-left: 1em;
+    }
+    
+    .facebook-box {
+        max-height: 200px;
+        overflow: hidden;
+    }
+}
+
+
+/* XS Smallest screen: 768px; */
+@media (max-width: 768px) {
+    .row-margin {
+        margin-bottom: 1em;
+    }
+    
+    .row-margin-left {
+        margin-left: 0;
+    }
+
+    footer .row-margin {
+        margin-bottom: 0;
+    }
+}

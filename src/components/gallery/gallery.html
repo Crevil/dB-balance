@@ -1,0 +1,15 @@
+<ul rn-carousel 
+    rn-carousel-buffered 
+    rn-carousel-controls
+    
+    rn-carousel-pause-on-hover 
+    rn-carousel-index="currentIndex">
+
+    <li ng-repeat="image in images">
+        <div ng-style="{'background-image': 'url(' + image.source + ')'}" 
+             class="bgimage img-responsive rounded-box overflow-hide"
+             title="{{image.description}}">
+            <div class="caption" ng-if="image.description != undefined"><p>{{ image.description }}</p></div>
+        </div>
+    </li>
+</ul>

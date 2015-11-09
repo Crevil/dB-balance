@@ -1,0 +1,53 @@
+<div ng-if="errorMessage != undefined" class="text-warning">
+    <p>{{errorMessage}}</p>
+</div>
+<div id="jquery_jplayer" class="jp-jplayer" ng-show="errorMessage == undefined">
+</div>
+<div id="jp_container" class="jp-audio" ng-show="errorMessage == undefined">
+    <div class="jp-type-playlist">
+        <div class="jp-interface">
+            <div class="row">
+                <div class="col-sm-10 col-xs-12">
+                    <ul class="jp-controls">
+                        <li class="jp-previous" ><span class="glyphicon glyphicon-lg glyphicon-step-backward"></span></li>
+                        <li class="jp-play"><span class="glyphicon glyphicon-lg glyphicon-play"></span></li>
+                        <li class="jp-pause"><span class="glyphicon glyphicon-lg glyphicon-pause"></span></li>
+                        <li class="jp-next"><span class="glyphicon glyphicon-lg glyphicon-step-forward"></span></li>
+                        <li class="jp-stop"><span class="glyphicon glyphicon-lg glyphicon-stop"></span></li>
+                        <li class="jp-mute"><span class="glyphicon glyphicon-lg glyphicon-volume-off"></span></li>
+                        <li class="jp-unmute"><span class="glyphicon glyphicon-lg glyphicon-volume-up"></span></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2 hidden-xs">
+                    <div class="jp-volume-bar pull-right">
+                        <div class="jp-volume-bar-value"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="jp-time-holder text-muted col-sm-12">
+                    <div class="jp-current-time"></div>
+                    <div class="jp-duration"></div>
+                </div>
+            </div>
+        </div>
+        <div class="jp-playlist">
+            <ul>
+                <!-- The method Playlist.displayPlaylist() uses this unordered list -->
+                <li></li>
+            </ul>
+        </div>
+        <div class="jp-no-solution">
+            <span>Opdatering er n&oslash;dvendig</span> For at kunne afspille musikeksemplerne skal du opdatere din browser eller opdatere dit <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+        </div>
+    </div>
+</div>

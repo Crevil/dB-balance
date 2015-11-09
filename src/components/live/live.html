@@ -1,0 +1,11 @@
+<article>
+    <div class="row row-margin row-flex" ng-repeat="text in vm.data.texts">
+        <div class="col-xs-12 rounded-box color-box">
+            <div class="padding-box">
+                <h1 ng-if="text.header != undefined && text.header != ''">{{text.header}}</h1>
+                
+                <p ng-bind-html="text.text | lineBreakFilter | toTrustedFilter"></p>
+            </div>
+        </div>
+    </div>
+</article>
