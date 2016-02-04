@@ -1,25 +1,43 @@
 {
-  "name": "dB-balance",
-  "description": "dB-balance",
-  "version": "4.0.0",
-  "homepage": "http://www.db-balance.dk",
-  "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "angular": "1.4.x",
-    "angular-animate": "1.4.x",
-    "angular-carousel": "0.3.x",
-    "angular-sanitize": "~1.4.6",
-    "angular-scroll": "0.7.x",
-    "angular-touch": "1.4.x",
-    "angulike": "~1.2.0",
-    "bootstrap": "3.3.x",
-    "html5-boilerplate": "5.2.x",
-    "jquery": "2.1.x",
-    "ng-facebook": "0.1.x",
-    "ui-router": "0.2.x",
-    "jPlayer": "jplayer#~2.9.2",
-    "angular-resource": "~1.4.7",
-    "angular-bootstrap": "~0.14.3"
-  }
+    "name": "dB-balance",
+    "description": "dB-balance",
+    "version": "4.0.0",
+    "homepage": "http://www.db-balance.dk",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "angular": "1.4.x",
+        "angular-animate": "1.4.x",
+        "angular-carousel": "0.3.x",
+        "angular-sanitize": "1.4.x",
+        "angular-scroll": "1.0.x",
+        "angular-touch": "1.4.x",
+        "angulike": "1.2.x",
+        "bootstrap": "3.3.x",
+        "html5-boilerplate": "5.3.x",
+        "jquery": "2.2.x",
+        "ng-facebook": "0.1.x",
+        "ui-router": "0.2.x",
+        "jPlayer": "jplayer#~2.9.2",
+        "angular-resource": "1.4.x",
+        "angular-bootstrap": "1.1.x"
+    },
+    "overrides": {
+        "bootstrap": {
+            "main": [
+                "dist/css/bootstrap.css",
+                "dist/js/bootstrap.js",
+                "dist/fonts/*"
+            ]
+        },
+        "jPlayer": {
+            "main": [
+                "./dist/jplayer/jquery.jplayer.js",
+                "./dist/jplayer/jquery.jplayer.swf",
+                "./dist/skin/pink.flag/jplayer.pink.flag.css",
+                "./dist/skin/pink.flag/mustache/jplayer.pink.flag.audio.single.html",
+                "./dist/add-on/jplayer.playlist.js"
+            ]
+        }
+    }
 }

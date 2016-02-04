@@ -3,6 +3,7 @@ dest/
 bower_components/
 node_modules/
 typings/
+compiledApp/
 
 # FTP credentials
 src/sftp-config.json
