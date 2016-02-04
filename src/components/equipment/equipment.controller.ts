@@ -13,6 +13,8 @@ module dBApp.equipment {
     export class EquipmentController {
         data: any;
 
+        static $inject = ["$location", "textService"];
+        
         constructor($location: angular.ILocationService, textService: services.ITextService) {
             var location: string = $location.path();
 
@@ -25,5 +27,5 @@ module dBApp.equipment {
 
     angular
         .module('dBApp.equipment')
-        .controller('equipmentController', ["$location", "textService", ($l: angular.ILocationService, t: services.ITextService) => new EquipmentController($l, t)]);
+        .controller('equipmentController', EquipmentController);
 }

@@ -43,6 +43,8 @@ module dBApp.core {
         facebookPageUrl: string;
         showSpinner: boolean;
 
+        static $inject = ['$location', '$scope', 'visibilityService', 'titleService', 'galleryService'];
+        
         constructor(
             $location: angular.ILocationService, 
             $scope: angular.IScope,
@@ -97,6 +99,5 @@ module dBApp.core {
     }
 
     angular.module("dBApp.core")
-        .controller('coreController', ['$location', '$scope', 'visibilityService', 'titleService', 'galleryService', 
-            ($l: angular.ILocationService, $s: angular.IScope, v: services.IVisibilityService, t: services.ITitleService, g: services.IGalleryService) => new CoreController($l, $s, v, t, g)]);
+        .controller('coreController', CoreController);
 }

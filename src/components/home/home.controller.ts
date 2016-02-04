@@ -23,6 +23,8 @@ module dBApp.home {
         facebookUrl: string;
         facebookPosts: number;
 
+        static $inject = ["$location", "textService", "galleryService", "visibilityService"];
+
         constructor($location: angular.ILocationService, textService: services.ITextService, galleryService: services.IGalleryService, visibilityService: services.IVisibilityService) {
             this.gallery = galleryService;
             this.visibility = visibilityService;
@@ -42,6 +44,5 @@ module dBApp.home {
 
     angular
         .module('dBApp.home')
-        .controller('homeController', ["$location", "textService", "galleryService", "visibilityService", 
-            ($l: angular.ILocationService, t: services.ITextService, g: services.IGalleryService, v: services.IVisibilityService) => new HomeController($l, t, g, v)]);
+        .controller('homeController', HomeController);
 }

@@ -44,6 +44,7 @@ module dBapp.facebookfeed {
         facebookUrl: string;
         
         static $inject = ["$http", "$facebook", "$scope"];
+        
         constructor(private $http: angular.IHttpService, private $facebook, isolatedScope: IFacebookFeedDirectiveScope) {
             this.facebookUrl = isolatedScope.facebookUrl;
             this.maxPosts = isolatedScope.maxPosts;

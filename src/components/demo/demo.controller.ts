@@ -12,6 +12,8 @@ module dBApp.demo {
 
     export class DemoController {
         data: any;
+        
+        static $inject = ["$location", "textService"];
 
         constructor($location: angular.ILocationService, textService: services.ITextService) {
             var location: string = $location.path();
@@ -25,5 +27,5 @@ module dBApp.demo {
 
     angular
         .module('dBApp.demo')
-        .controller('demoController', ["$location", "textService", ($l: angular.ILocationService, t: services.ITextService) => new DemoController($l, t)]);
+        .controller('demoController', DemoController);
 }

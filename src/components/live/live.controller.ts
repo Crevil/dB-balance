@@ -13,6 +13,8 @@ module dBApp.live {
     export class LiveController {
         data: any;
 
+        static $inject = ["$location", "textService"];
+        
         constructor($location: angular.ILocationService, textService: services.ITextService) {
             var location: string = $location.path();
 
@@ -25,5 +27,5 @@ module dBApp.live {
 
     angular
         .module('dBApp.live')
-        .controller('liveController', ["$location", "textService", ($l: angular.ILocationService, t: services.ITextService) => new LiveController($l, t)]);
+        .controller('liveController', LiveController);
 }

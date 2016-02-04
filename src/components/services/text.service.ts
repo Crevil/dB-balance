@@ -16,7 +16,7 @@ module dBApp.services {
 	export class TextService implements ITextService {
 		//apiUrl: string = "http://www.db-balance.dk/v4.0/api/";
 		apiUrl: string;
-
+        
 		constructor(private $http: angular.IHttpService) {
 			this.apiUrl = "api/";
 		}
@@ -38,11 +38,9 @@ module dBApp.services {
 
 			return this.$http.get(this.apiUrl + "feedback/random" + limitString + ".json");
 		}
-
 	}
 
     angular
         .module('dBApp.services')
-        .factory('textService', ["$http", 
-        	($h: angular.IHttpService) => new TextService($h)]);
+        .factory('textService', ["$http", $h => new TextService($h)]);
 }

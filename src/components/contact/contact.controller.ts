@@ -12,7 +12,8 @@ module dBApp.contact {
 
     export class ContactController {
         data: any;
-
+        static $inject = ["$location", "textService"];
+        
         constructor($location: angular.ILocationService, textService: services.ITextService) {
             var location: string = $location.path();
 
@@ -25,5 +26,5 @@ module dBApp.contact {
 
     angular
         .module('dBApp.contact')
-        .controller('ContactController', ["$location", "textService", ($l: angular.ILocationService, t: services.ITextService) => new ContactController($l, t)]);
+        .controller('ContactController', ContactController);
 }
