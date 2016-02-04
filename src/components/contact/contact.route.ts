@@ -4,16 +4,16 @@
  * Description: Sets ui.router configuration
  */
 module dBApp.contact {
-	'use strict';
+    'use strict';
 
-	angular
-		.module("dBApp.contact")
-		.config(["$stateProvider", ($stateProvider: angular.ui.IStateProvider) => {
-		$stateProvider.state("contact", {
-			url: "/contact",
-			templateUrl: "components/contact/contact.html",
-			controller: ContactController,
-				controllerAs: "vm"
-			});
-		}]);
+    angular
+        .module("dBApp.contact")
+        .config(["$stateProvider", ($stateProvider: angular.ui.IStateProvider) => {
+            $stateProvider.state("contact", {
+                url: "/contact",
+                templateUrl: "components/contact/contact.html",
+                controller: ContactController,
+                controllerAs: "vm"
+            });
+        }]);
 }
