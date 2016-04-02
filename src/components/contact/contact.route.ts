@@ -7,13 +7,13 @@ module dBApp.contact {
     'use strict';
 
     angular
-        .module("dBApp.contact")
-        .config(["$stateProvider", ($stateProvider: angular.ui.IStateProvider) => {
-            $stateProvider.state("contact", {
-                url: "/contact",
-                templateUrl: "components/contact/contact.html",
+        .module('dBApp.contact')
+        .config(['$stateProvider', ($stateProvider: angular.ui.IStateProvider) => {
+            $stateProvider.state('contact', {
                 controller: ContactController,
-                controllerAs: "vm"
+                controllerAs: 'vm',
+                templateUrl: 'components/contact/contact.html',
+                url: '/contact'
             });
         }]);
 }

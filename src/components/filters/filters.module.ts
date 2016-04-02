@@ -4,8 +4,8 @@
  * Description: Create module
  */
 module dBApp.filters {
-	'use strict';
+    'use strict';
 
-	angular
-		.module("dBApp.filters", []);
+    angular
+        .module('dBApp.filters', []);
 }

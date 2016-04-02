@@ -7,13 +7,13 @@ module dBApp.demo {
     'use strict';
 
     angular
-        .module("dBApp.demo")
-        .config(["$stateProvider", ($stateProvider: angular.ui.IStateProvider) => {
-            $stateProvider.state("demo", {
-                url: "/demo",
-                templateUrl: "components/demo/demo.html",
+        .module('dBApp.demo')
+        .config(['$stateProvider', ($stateProvider: angular.ui.IStateProvider) => {
+            $stateProvider.state('demo', {
                 controller: DemoController,
-                controllerAs: "vm"
+                controllerAs: 'vm',
+                templateUrl: 'components/demo/demo.html',
+                url: '/demo'
             });
         }]);
 }

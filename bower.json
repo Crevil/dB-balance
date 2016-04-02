@@ -1,43 +1,48 @@
 {
-    "name": "dB-balance",
-    "description": "dB-balance",
-    "version": "4.0.0",
-    "homepage": "http://www.db-balance.dk",
-    "license": "MIT",
-    "private": true,
-    "dependencies": {
-        "angular": "1.4.x",
-        "angular-animate": "1.4.x",
-        "angular-carousel": "0.3.x",
-        "angular-sanitize": "1.4.x",
-        "angular-scroll": "1.0.x",
-        "angular-touch": "1.4.x",
-        "angulike": "1.2.x",
-        "bootstrap": "3.3.x",
-        "html5-boilerplate": "5.3.x",
-        "jquery": "2.2.x",
-        "ng-facebook": "0.1.x",
-        "ui-router": "0.2.x",
-        "jPlayer": "jplayer#~2.9.2",
-        "angular-resource": "1.4.x",
-        "angular-bootstrap": "1.1.x"
+  "name": "dB-balance",
+  "description": "dB-balance",
+  "version": "4.0.0",
+  "homepage": "http://www.db-balance.dk",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.3",
+    "angular-animate": "1.5.3",
+    "angular-carousel": "0.3.13",
+    "angular-sanitize": "1.5.3",
+    "angular-scroll": "1.0.0",
+    "angular-touch": "1.5.3",
+    "angulike": "1.2.0",
+    "bootstrap-sass": "3.3.6",
+    "html5-boilerplate": "5.3.0",
+    "jquery": "2.2.2",
+    "ng-facebook": "0.1.6",
+    "ui-router": "0.2.18",
+    "angular-resource": "1.5.3",
+    "angular-bootstrap": "1.2.5",
+    "jPlayer": "jplayer#^2.9.2"
+  },
+  "overrides": {
+    "angular": {
+      "dependencies": {
+        "jquery": "2.2.x"
+      }
     },
-    "overrides": {
-        "bootstrap": {
-            "main": [
-                "dist/css/bootstrap.css",
-                "dist/js/bootstrap.js",
-                "dist/fonts/*"
-            ]
-        },
-        "jPlayer": {
-            "main": [
-                "./dist/jplayer/jquery.jplayer.js",
-                "./dist/jplayer/jquery.jplayer.swf",
-                "./dist/skin/pink.flag/jplayer.pink.flag.css",
-                "./dist/skin/pink.flag/mustache/jplayer.pink.flag.audio.single.html",
-                "./dist/add-on/jplayer.playlist.js"
-            ]
-        }
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/javascripts/bootstrap.js",
+        "assets/fonts/**/*"
+      ]
+    },
+    "jPlayer": {
+      "main": [
+        "./dist/jplayer/jquery.jplayer.js",
+        "./dist/jplayer/jquery.jplayer.swf",
+        "./dist/skin/pink.flag/jplayer.pink.flag.css",
+        "./dist/skin/pink.flag/mustache/jplayer.pink.flag.audio.single.html",
+        "./dist/add-on/jplayer.playlist.js"
+      ]
     }
+  }
 }

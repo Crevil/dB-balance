@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="assets/images/logo_64x64.png">
 
-    <link rel="stylesheet" href="site.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body ng-keyup="vm.handleKeyPress($event)">
@@ -31,47 +31,48 @@
     <div class="loading-page" ng-if="vm.showSpinner">
         <span class="glyphicon glyphicon-headphones spinning"></span>
     </div>
-    
+
     <!-- <div fb-like="vm.facebookPageUrl"></div> -->
-    
+
+
     <div class="container content animate-move" ng-class="{'move-right'  : !some}">
-        <nav db-navigation 
-             db-navigation-player="vm.player.status" 
+        <nav db-navigation
+             db-navigation-player="vm.player.status"
              db-navigation-player-stop="vm.player.stop()"
              db-navigation-is-collapsed="some">
         </nav>
-    
-        <section    class="animate-gallery row row-margin gallery" 
-                    ng-cloak 
+
+        <section    class="animate-gallery row row-margin gallery"
+                    ng-cloak
                     ng-show="vm.visibilityService.gallery">
-            <div    db-gallery 
-                    db-gallery-model="vm.galleryService.images" 
-                    db-gallery-current-index="vm.galleryService.currentIndex" 
+            <div    db-gallery
+                    db-gallery-model="vm.galleryService.images"
+                    db-gallery-current-index="vm.galleryService.currentIndex"
                     class="text-center padding-left-00 padding-right-00"
                     id="gallery">
             </div>
         </section>
-        
-        <section    class="animate-player row rounded-box color-box padding-25 row-margin" 
-                    ng-show="vm.visibilityService.player" 
-                    ng-cloak 
-                    db-player 
+
+        <section    class="animate-player row rounded-box color-box padding-25 row-margin"
+                    ng-show="vm.visibilityService.player"
+                    ng-cloak
+                    db-player
                     db-player-status="vm.player.status"
                     id="player">
         </section>
-        
+
         <main ui-view></main>
-        
+
         <footer>
             <div class="row">
                 <div class="col-xs-12 rounded-box padding-05 color-box" ng-include="'layout/footer.html'">
-                    
+
                 </div>
             </div>
         </footer>
     </div>
-    <script src="vendors.min.js"></script>
-    <script src="app.min.js"></script>
+    <script src="scripts/vendors.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
-    
+
 </html>

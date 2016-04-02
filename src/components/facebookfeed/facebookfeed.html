@@ -18,14 +18,14 @@
             <span class="glyphicon glyphicon-headphones spinning"></span>
         </div>
     </div>
-    
+
     <article class="row" ng-repeat="post in vm.posts">
         <div class="col-sm-12 container-fluid">
             <div class="row">
                 <div ng-if="post.picture != undefined" class="col-md-5 col-md-push-7">
                     <a ng-href="{{post.link}}" title="Se opslag på Facebook" target="_blank"><img class="img img-responsive img-rounded center-block" ng-src="{{post.picture}}" /></a>
                 </div>
-                
+
                 <div ng-class="{'col-sm-12': post.picture == undefined, 'col-md-7 col-md-pull-5': post.picture != undefined}"
                     style="word-wrap:break-word">
                     <p class="text-muted small">
@@ -34,7 +34,7 @@
                     <p class="text-sm">
                         <b><i>"<span ng-bind-html="post.message | linky:'_blank'"></span>"</i></b>
                     </p>
-                    
+
                     <p>
                         <span class="text-muted pointer" ng-click="vm.like(post.id)" title="Syntes godt om dette opslag">
                             <span ng-if="post.likes != undefined" ng-class="{'text-primary' : post.likes.summary.has_liked}">{{post.likes.data.length}}</span>
@@ -48,7 +48,7 @@
                     </p>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-sm-12">
                     <p><a ng-if="$last" ng-href="{{vm.facebookUrl}}" target="_blank">Se flere opdateringer</a></p>

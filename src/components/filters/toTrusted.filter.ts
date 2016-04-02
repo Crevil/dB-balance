@@ -7,9 +7,9 @@ module dBApp.filters {
     'use strict';
 
     angular
-        .module("dBApp.filters")
-        .filter("toTrustedFilter", ["$sce", ($sce: angular.ISCEService) => {
-            return function(input) {
+        .module('dBApp.filters')
+        .filter('toTrustedFilter', ['$sce', ($sce: angular.ISCEService) => {
+            return (input: string) => {
                 return $sce.trustAsHtml(input);
             };
         }]);

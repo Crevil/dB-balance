@@ -1,0 +1,225 @@
+/*
+ * Skin for jPlayer Plugin (jQuery JavaScript Library)
+ * http://www.happyworm.com/jquery/jplayer
+ *
+ * Skin Name: dB-balance
+ *
+ * Copyright (c) 2015 Bjørn Sørensen
+ 
+ * Author: Bjørn Sørensen
+ * Skin Version: 2.0 (jPlayer 2.9.2)
+ * Date: Juli 5th 2015
+ */
+
+div.jp-jplayer {
+    width: 0px;
+    height: 0px;
+}
+
+div.jp-audio {
+    /* Hoved div til afspilleren */
+    
+    position: relative;
+    border: 0px;
+    font-size: 1em;
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 1.6;
+    text-align: left;
+}
+/* @group progress bar */
+
+div.jp-progress {
+    /* Indeholder progress baren */
+    
+    width: 100%;
+    height: 8px;
+}
+
+div.jp-seek-bar {
+    /* Progress bar, definition til play baren */
+    
+    background: #d8d8d8;
+    width: 0px;
+    height: 100%;
+    cursor: pointer;
+}
+
+div.jp-play-bar {
+    /* Play bar, forloeben tid */
+    
+    background: green;
+    width: 0px;
+    height: 100%;
+}
+/* The seeking class is added/removed inside jPlayer */
+
+div.jp-seeking-bg {
+    background: rgba(236, 236, 236, 1.0);
+}
+/* @end */
+/* @group current time and duration */
+
+div.jp-audio div.jp-time-holder {
+    height: 1em;
+    width: 100%;
+}
+
+div.jp-current-time,
+div.jp-duration {
+    width: 60px;
+    font-size: 0.8em;
+    font-style: oblique;
+    height: 100%;
+}
+
+div.jp-current-time {
+    float: left;
+    display: inline;
+    text-align: left;
+}
+
+div.jp-duration {
+    float: right;
+    display: inline;
+    text-align: right;
+}
+/* @end */
+/* @group playlist */
+
+div.jp-playlist {
+    width: 100%;
+    float: none;
+}
+
+div.jp-playlist ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0px;
+    font-size: 0.9em;
+}
+
+div.jp-playlist li {
+    padding: 0px 0px 0px 20px;
+}
+
+div.jp-playlist li div {
+    display: inline;
+}
+
+div.jp-playlist li.jp-playlist-current {
+    list-style-type: square;
+    list-style-position: inside;
+    padding-left: 7px;
+}
+
+div.jp-playlist a {
+    text-decoration: none;
+}
+
+div.jp-playlist a.jp-playlist-current {
+    color: #222b13;
+}
+
+div.jp-playlist span.jp-free-media {
+    float: right;
+    display: inline;
+    text-align: right;
+    margin-right: 10px;
+}
+
+div.jp-playlist span.jp-artist {
+    font-size: 1.1em;
+}
+
+div.jp-playlist span.jp-title {
+    font-size: 1em;
+}
+/* @end */
+/* @group NO SOLUTION error feedback */
+
+.jp-no-solution {
+    position: absolute;
+    width: 390px;
+    margin-left: -202px;
+    left: 50%;
+    top: 10px;
+    padding: 5px;
+    font-size: .8em;
+    background-color: #eee;
+    border: 2px solid #009be3;
+    color: #000;
+    display: none;
+}
+
+.jp-no-solution a {
+    color: #000;
+}
+
+.jp-no-solution span {
+    font-size: 1em;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+/* @end */
+/* @group interface */
+
+div.jp-interface {
+    /* Indeholder knapper, progressbar osv. */
+    
+    width: 100%;
+    height: 100%;
+}
+
+div.jp-interface ul.jp-controls {
+    /* Knap indstillinger som gruppe */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%
+}
+
+div.jp-interface ul.jp-controls li {
+    /* Knap indstillinger som enkelt elementer */
+    color:#222b13;
+    display: inline;
+    float: left;
+    cursor: pointer;
+}
+div.jp-interface ul.jp-controls li:hover {
+    /* Knap indstillinger som enkelt elementer */
+        background-color: #fff;
+        color: #556b2f;
+    opacity: 0.6;
+}
+
+div.jp-interface ul.jp-controls span {
+    /* Knap indstillinger som enkelt elementer */
+
+    margin: 10px;
+    cursor: pointer;
+}
+
+div.jp-interface .jp-pause {
+    color: #556b2f;
+}
+/* @end */
+/* @group volume controls */
+
+div.jp-volume-bar {
+    overflow: hidden;
+    background: #d8d8d8;
+    width: 150px;
+    height: 21px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    cursor: pointer;
+}
+
+div.jp-volume-bar-value {
+    background: green;
+    width: 0px;
+    height: 30px;
+}
+/* end */

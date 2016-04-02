@@ -4,16 +4,16 @@
  * Description: Sets ui.router configuration
  */
 module dBApp.equipment {
-	'use strict';
+    'use strict';
 
-	angular
-		.module("dBApp.equipment")
-		.config(["$stateProvider", ($stateProvider: angular.ui.IStateProvider) => {
-		$stateProvider.state("equipment", {
-				url: "/equipment",
-				templateUrl: "components/equipment/equipment.html",
-				controller: EquipmentController,
-				controllerAs: "vm"
-			});
-		}]);
+    angular
+        .module('dBApp.equipment')
+        .config(['$stateProvider', ($stateProvider: angular.ui.IStateProvider) => {
+            $stateProvider.state('equipment', {
+                controller: EquipmentController,
+                controllerAs: 'vm',
+                templateUrl: 'components/equipment/equipment.html',
+                url: '/equipment'
+            });
+        }]);
 }

@@ -1,0 +1,107 @@
+.animate-gallery {
+    .ng-hide-remove {
+        @include animation('slide-in-gallery .2s');
+    }
+
+    .ng-hide-add {
+        @include animation('slide-out-gallery .2s');
+    }
+}
+
+@include keyframes(slide-in-gallery) {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 100vh;
+        opacity: 1;
+    }
+}
+
+@include keyframes(slide-out-gallery) {
+    from {
+        height: 100vh;
+        opacity: 1;
+    }
+    to {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+.animate-player {
+    .ng-hide-remove {
+        @include animation('0.2s slide-in-player');
+    }
+
+    .ng-hide-add {
+        @include animation('0.2s slide-out-player');
+    }
+}
+
+@include keyframes(slide-in-player) {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 245px;
+        opacity: 1;
+    }
+}
+
+@include keyframes(slide-out-player) {
+    from {
+        height: 245px;
+        opacity: 1;
+    }
+    to {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+.animate {
+    .ng-move,
+    .ng-enter,
+    .ng-leave {
+        transition:all linear 0.2s;
+    }
+
+    .ng-leave.ng-leave-active,
+    .ng-move,
+    .ng-enter {
+        opacity:0;
+        max-height:0;
+    }
+
+    .ng-leave,
+    .ng-move.ng-move-active,
+    .ng-enter.ng-enter-active {
+        opacity:1;
+        max-height:200px;
+    }
+}
+
+.glyphicon.spinning {
+    @include animation('spin 2s infinite linear');
+}
+
+@include keyframes(spin) {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+/* Under XS view port */
+@media (max-width: 767px) {
+    .content.animate-move {
+        @include transition('margin-left 0.5s ease');
+        margin-left: 0;
+
+        .move-right {
+            @include transition('margin-left 0.5s ease');
+            margin-left: 40px;
+        }
+    }
+}

@@ -16,6 +16,8 @@ module dBApp.home {
     }
 
     export class HomeController implements IHomeController {
+        static $inject: Array<string> = ['$location', 'textService', 'galleryService', 'visibilityService'];
+
         data: { texts: any[] };
         gallery: services.IGalleryService;
         visibility: services.IVisibilityService;
@@ -23,21 +25,24 @@ module dBApp.home {
         facebookUrl: string;
         facebookPosts: number;
 
-        static $inject = ["$location", "textService", "galleryService", "visibilityService"];
 
-        constructor($location: angular.ILocationService, textService: services.ITextService, galleryService: services.IGalleryService, visibilityService: services.IVisibilityService) {
+        constructor(
+            $location: angular.ILocationService,
+            textService: services.ITextService,
+            galleryService: services.IGalleryService,
+            visibilityService: services.IVisibilityService) {
             this.gallery = galleryService;
             this.visibility = visibilityService;
 
-            var location: string = $location.path();
+            let location: string = $location.path();
 
             textService
                 .getPageTexts(location.substring(1, location.length))
-                .then((data) => {
+                .then((data: any) => {
                     this.data = data.data;
                 });
 
-            this.facebookUrl = "https://www.facebook.com/dB.balance";
+            this.facebookUrl = 'https://www.facebook.com/dB.balance';
             this.facebookPosts = 2;
         }
     }

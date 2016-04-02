@@ -8,6 +8,6 @@ module dBApp.home {
 
     angular
         .module('dBApp.home', [
-        	"dBApp.facebookfeed"
-    	]);
+            'dBApp.facebookfeed'
+        ]);
 }

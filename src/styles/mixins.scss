@@ -1,0 +1,51 @@
+// create animation based on a string
+// @include animation('keyframeName 2s')
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+// create keyframe
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin transition($transition...) {
+    $max: length($transition);
+    $transitions: '';
+
+    @for $i from 1 through $max {
+        $transitions: #{$transitions + nth($transition, $i)};
+
+        @if $i < $max {
+            $transitions: #{$transitions + ", "};
+        }
+    }
+    -webkit-transition: $transitions;
+    -moz-transition:    $transitions;
+    -o-transition:      $transitions;
+    transition:        $transitions;
+}

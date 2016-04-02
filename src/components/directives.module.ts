@@ -4,8 +4,8 @@
  * Description: Create module
  */
 module dBApp.directives {
-	'use strict';
+    'use strict';
 
-	angular
-		.module("dBApp.directives", []);
+    angular
+        .module('dBApp.directives', []);
 }

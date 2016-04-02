@@ -1,5 +1,6 @@
 # Build results
-dest/
+dist/
+build/
 bower_components/
 node_modules/
 typings/

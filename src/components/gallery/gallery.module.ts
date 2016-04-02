@@ -4,9 +4,9 @@
  * Description: Create module
  */
 module dBApp.gallery {
-	'use strict';
+    'use strict';
 
-	angular
-		.module("dBApp.gallery", [
-			"ngTouch"]);
+    angular
+        .module('dBApp.gallery', [
+            'ngTouch']);
 }

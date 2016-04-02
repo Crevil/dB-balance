@@ -1,5 +1,5 @@
 /// <reference path="../../../typings/tsd.d.ts" />
-/* 
+/*
  * Service: gallery
  * Description: Holds data related to dbGallery directive for inter-controller comunication
  */
@@ -29,5 +29,4 @@ module dBApp.services {
     angular
         .module('dBApp.services')
         .factory('galleryService', () => new GalleryService());
-
 }

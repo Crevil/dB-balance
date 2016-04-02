@@ -11,15 +11,15 @@ module dBApp.live {
     }
 
     export class LiveController {
+        static $inject: Array<string> = ['$location', 'textService'];
+
         data: any;
 
-        static $inject = ["$location", "textService"];
-        
         constructor($location: angular.ILocationService, textService: services.ITextService) {
-            var location: string = $location.path();
+            let location: string = $location.path();
 
             textService.getPageTexts(location.substring(1, location.length))
-                .then((data) => {
+                .then((data: any) => {
                     this.data = data.data;
                 });
         }

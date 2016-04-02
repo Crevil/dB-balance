@@ -1,47 +1,48 @@
 /// <reference path="../../typings/tsd.d.ts" />
-/* 
+/*
  * Directive: ScrollToItem
  * Description: Directive to scroll to an element identified by a jQuery selector
-*/
+ */
 module dBApp.directives {
+    'use strict';
 
-	interface IScrollToItemDirectiveScope extends angular.IScope {
-		scrollTo: string;
-		scrollEnable: boolean;
-	}
+    interface IScrollToItemDirectiveScope extends angular.IScope {
+        scrollTo: string;
+        scrollEnable: boolean;
+    }
 
-	interface IScrollToItemDirectiveAttributes extends angular.IAttributes {
-		dbScrollTo: string;
-		dbScollEnable: boolean;
-	}
+    interface IScrollToItemDirectiveAttributes extends angular.IAttributes {
+        dbScrollTo: string;
+        dbScollEnable: boolean;
+    }
 
-	class ScrollToItemDirective implements angular.IDirective {
-		scope = {
-			scrollTo: "@dbScrollTo",
-			scrollEnable: "=dbScrollEnable"
-		};
-		restrict: string = "A";
+    class ScrollToItemDirective implements angular.IDirective {
+        scope: any = {
+            scrollEnable: '=dbScrollEnable',
+            scrollTo: '@dbScrollTo'
+        };
+        restrict: string = 'A';
 
-		link = (scope: IScrollToItemDirectiveScope, element: angular.IAugmentedJQuery, attrs: IScrollToItemDirectiveAttributes) => {
-			element.on("click", () => {
-				if(scope.scrollEnable == false) {
-					return;
-				}
-				
-				$("html, body").animate(
-					{ scrollTop: $(scope.scrollTo).offset().top },
-					"200");
-			});
-		};
+        static factory(): angular.IDirectiveFactory {
+            const directive: any = () => new ScrollToItemDirective();
+            directive.$inject = [];
+            return directive;
+        }
 
-		static factory(): angular.IDirectiveFactory {
-			const directive = () => new ScrollToItemDirective();
-			directive.$inject = [];
-			return directive;
-		}
-	}
+        link: any = (scope: IScrollToItemDirectiveScope, element: angular.IAugmentedJQuery, attrs: IScrollToItemDirectiveAttributes) => {
+            element.on('click', () => {
+                if (scope.scrollEnable === false) {
+                    return;
+                }
 
-	angular
-		.module("dBApp.directives")
-		.directive("dbScrollToItem", ScrollToItemDirective.factory());
+                $('html, body').animate(
+                    { scrollTop: $(scope.scrollTo).offset().top },
+                    '200');
+            });
+        };
+    }
+
+    angular
+        .module('dBApp.directives')
+        .directive('dbScrollToItem', ScrollToItemDirective.factory());
 }

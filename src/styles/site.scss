@@ -1,18 +1,18 @@
 /* dB-balance styles css stylesheet */
 html {
-  background: url("../assets/images/background.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url("../assets/images/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
 
 body {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 * {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
@@ -27,38 +27,42 @@ body {
 .float-right { float: right;}
 .float-left {float: left;}
 
-.color-box   { background-color: rgba(221, 225, 213, 1.0); }
-.color-muted { background-color: rgba(228, 231, 221, 1.0); }
-.color-dark  { background-color: rgba(86, 110, 52, 1.0);   }
+.color-box   {
+    background-color: $color-primary;
+}
 
-.text-muted { color: rgba(141, 149, 126, 1.0); }
-.text-dark { color: rgba(86, 110, 52, 1.0); }
+.color-muted {
+    background-color: $color-muted-1;
+}
 
-a { color: rgba(86, 110, 52, 1.0); }
+.color-dark {
+    background-color: $color-secondary;
+}
 
-a:hover, a:focus { color: rgba(141, 149, 126, 1.0); }
+.text-dark {
+    color: $text-color-dark;
+}
 
-/* Above SM view port */
-@media (min-width: 768px) {
+@media (min-width: $container-sm) {
   .rounded-nav {
     border-radius: 2em;
   }
-  
+
   .rounded-15-bottom { border-radius: 1.5em 1.5em 0 0 !important; }
   .rounded-box { border-radius: 2em !important; }
   .padding-box { padding: 2.5em !important; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $container-sm) {
   .rounded-nav {
     border-top-right-radius: 0em !important;
     border-bottom-right-radius: 0em !important;
   }
-  
+
   .rounded-box {
     border-radius: 1em !important;
   }
-  
+
   .padding-box { padding: 0.5em !important; }
 }
 

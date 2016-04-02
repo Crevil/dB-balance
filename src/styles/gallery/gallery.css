@@ -1,0 +1,59 @@
+ul[rn-carousel] {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.rn-carousel-control {
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.rn-carousel-control:hover {
+    opacity: 1;
+}
+
+.rn-carousel-control.rn-carousel-control-prev {
+    left: -1em;
+}
+
+.rn-carousel-control.rn-carousel-control-prev:before {
+    content: "<";
+}
+
+.rn-carousel-control.rn-carousel-control-next {
+    right: -1em;
+}
+
+.rn-carousel-control.rn-carousel-control-next:before {
+    content: ">";
+}
+
+.bgimage {
+    text-align: center;
+    color: black;
+    background-size: cover;
+    height: 100%;
+    background-position: center center;
+}
+
+.bgimage > .caption {
+    background-color: white;
+    opacity: 0.6;
+}
+
+.gallery-link {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .rn-carousel-control.rn-carousel-control-prev {
+        left: 0.7em;
+    }
+    .rn-carousel-control.rn-carousel-control-next {
+        right: 0.7em;
+    }
+}

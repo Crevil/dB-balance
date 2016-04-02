@@ -31,69 +31,69 @@ module dBApp.directives.player {
 
     function playerDirective($resource: angular.resource.IResourceService): IPlayerDirective {
         return {
-            restrict: 'AE',
             link: link,
-            transclude: true,
-            templateUrl: 'components/player/player.html',
+            restrict: 'AE',
             scope: {
                 'status': '=dbPlayerStatus'
-            }
+            },
+            templateUrl: 'components/player/player.html',
+            transclude: true
         };
 
-        function link(scope: IPlayerDirectiveScope, element: angular.IAugmentedJQuery, attrs: IPlayerDirectiveAttributes) {
-            
-            if($.jPlayer == undefined) {
-                scope.errorMessage = "Der er sket en fejl og afspilleren kan ikke indlæses. Prøv igen senere.";
+        function link(scope: IPlayerDirectiveScope, element: angular.IAugmentedJQuery, attrs: IPlayerDirectiveAttributes): void {
+
+            if (!$.jPlayer) {
+                scope.errorMessage = 'Der er sket en fejl og afspilleren kan ikke indlæses. Prøv igen senere.';
                 return;
             }
 
-            var options : IjPlayerOptions = {
-                "cssSelector": {
-                    "jPlayer": "#jquery_jplayer",
-                    "cssSelectorAncestor": "#jp_container"
+            let options: IjPlayerOptions = {
+                'cssSelector': {
+                    'jPlayer': '#jquery_jplayer',
+                    'cssSelectorAncestor': '#jp_container'
                 },
-                "options": {
-                    "playlistOptions": {
-                        "enableRemoveControls": false,
-                        "displayTime": 'fast'
+                'options': {
+                    'playlistOptions': {
+                        'enableRemoveControls': false,
+                        'displayTime': 'fast'
                     },
-                    "supplied": "mp3"
+                    'supplied': 'mp3'
                 },
-                "playlist": []
+                'playlist': []
             };
 
-            var player = new jPlayerPlaylist(options.cssSelector, options.playlist, options.options);
+            let player: any = new jPlayerPlaylist(options.cssSelector, options.playlist, options.options);
 
-            $resource("assets/music/playlist.json").get((d, r) => {
-                angular.forEach(d["tracks"], (value, index) => {
+            $resource('assets/music/playlist.json').get((d: any, r: any) => {
+                angular.forEach(d.tracks, (value: any, index: number) => {
                     player.add({
-                        title: value["title"],
-                        artist: value["artist"],
-                        mp3: value["mp3"]
+                        artist: value.artist,
+                        mp3: value.mp3,
+                        title: value.title
                     });
                 });
             });
 
-            angular.element(player.cssSelector.jPlayer).bind($.jPlayer.event.playing, function(event) {
-                scope.status = "play";
+            angular.element(player.cssSelector.jPlayer).bind($.jPlayer.event.playing, () => {
+                scope.status = 'play';
                 scope.$apply();
             });
-            angular.element(player.cssSelector.jPlayer).bind($.jPlayer.event.pause, function(event) {
-                scope.status = "stop";
+            angular.element(player.cssSelector.jPlayer).bind($.jPlayer.event.pause, () => {
+                scope.status = 'stop';
                 scope.$apply();
             });
 
-            scope.status = "stop";
+            scope.status = 'stop';
 
-            scope.$watch('status', (newValue, oldValue) => {
+            scope.$watch('status', (newValue: string, oldValue: string) => {
                 if (newValue !== oldValue) {
-                    var p = angular.element(player.cssSelector.jPlayer);
+                    let p: angular.IAugmentedJQuery = angular.element(player.cssSelector.jPlayer);
                     switch (newValue) {
-                        case "stop":
-                            p.jPlayer("stop");
+                        case 'play':
+                            p.jPlayer('play');
                             break;
-                        case "play":
-                            p.jPlayer("play");
+                        default:
+                            p.jPlayer('stop');
                             break;
                     }
                 }
@@ -104,6 +104,5 @@ module dBApp.directives.player {
 
     angular
         .module('dBApp.directives')
-        .directive('dbPlayer', ["$resource", ($r: angular.resource.IResourceService) => playerDirective($r)]);
-
+        .directive('dbPlayer', ['$resource', ($r: angular.resource.IResourceService) => playerDirective($r)]);
 }

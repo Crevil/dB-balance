@@ -9,7 +9,7 @@
       "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
     },
     "angularjs/angular.d.ts": {
-      "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
+      "commit": "fc0f5a34aaadbea0eb2901d06db775f1960ba17a"
     },
     "angular-ui-router/angular-ui-router.d.ts": {
       "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
@@ -18,7 +18,7 @@
       "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
     },
     "jquery/jquery.d.ts": {
-      "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
+      "commit": "fc0f5a34aaadbea0eb2901d06db775f1960ba17a"
     },
     "angularjs/angular-resource.d.ts": {
       "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
@@ -28,6 +28,12 @@
     },
     "angular-scroll/angular-scroll.d.ts": {
       "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
+    },
+    "fbsdk/fbsdk.d.ts": {
+      "commit": "fc0f5a34aaadbea0eb2901d06db775f1960ba17a"
+    },
+    "ng-facebook/ng-facebook.d.ts": {
+      "commit": "fc0f5a34aaadbea0eb2901d06db775f1960ba17a"
     }
   }
 }

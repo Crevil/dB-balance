@@ -13,17 +13,20 @@ module dBApp.feedback {
     }
 
     export class FeedbackController {
+        static $inject: Array<string> = ['galleryService', 'visibilityService', 'textService'];
         gallery: services.IGalleryService;
         visibility: services.IVisibilityService;
         data: any;
 
-        static $inject = ["galleryService", "visibilityService", "textService"];
 
-        constructor(galleryService: services.IGalleryService, visibilityService: services.IVisibilityService, textService: services.ITextService) {
+        constructor(
+            galleryService: services.IGalleryService,
+            visibilityService: services.IVisibilityService,
+            textService: services.ITextService) {
             this.gallery = galleryService;
             this.visibility = visibilityService;
 
-            textService.getRandomFeedback(5).then((data) => {
+            textService.getRandomFeedback(5).then((data: any) => {
                 this.data = data.data;
             });
         }

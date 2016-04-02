@@ -4,16 +4,16 @@
  * Description: Sets ui.router configuration
  */
 module dBApp.feedback {
-	'use strict';
+    'use strict';
 
-	angular
-		.module("dBApp.feedback")
-		.config(["$stateProvider", ($stateProvider: angular.ui.IStateProvider) => {
-			$stateProvider.state("feedback", {
-				url: "/feedback",
-				templateUrl: "components/feedback/feedback.html",
-				controller: FeedbackController,
-				controllerAs: "vm"
-			});
-		}]);
+    angular
+        .module('dBApp.feedback')
+        .config(['$stateProvider', ($stateProvider: angular.ui.IStateProvider) => {
+            $stateProvider.state('feedback', {
+                controller: FeedbackController,
+                controllerAs: 'vm',
+                templateUrl: 'components/feedback/feedback.html',
+                url: '/feedback'
+            });
+        }]);
 }

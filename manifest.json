@@ -1,0 +1,60 @@
+{
+  "dependencies": {
+    "vendors.js": {
+      "main": true
+    },
+    "app.js": {
+      "files": [
+        "../build/app.module.js",
+        "../build/**/*.module.js",
+        "../build/**/*.js"
+      ]
+    },
+    "styles.css": {
+      "files": [
+        "styles/styles.scss",
+        "components/**/*.css"
+      ],
+      "main": true
+    },
+    "html": {
+        "files": [
+            "**/*.html"
+        ]
+    },
+    "images": {
+        "files": [
+            "assets/images/**/*"
+        ]
+    },
+    "typescript": {
+        "files": [
+            "**/*.ts"
+        ],
+        "main": false
+    },
+    "api": {
+        "files": [
+            "api/**/*.json"
+        ],
+        "main": false
+    },
+    "assets": {
+        "files": [
+            "assets/**/*.*"
+        ],
+        "main": false
+    }
+  },
+  "paths": {
+      "dist": "dist/",
+      "source": "src/",
+      "build": "build/",
+      "maps": "maps/",
+      "assets": "assets/",
+      "api": "api/"
+  },
+  "config": {
+    "devUrl": "http://localhost:8080"
+  }
+}

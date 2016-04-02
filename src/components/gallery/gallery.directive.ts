@@ -1,5 +1,5 @@
 /// <reference path="../../../typings/tsd.d.ts" />
-/* 
+/*
  * Directive: gallery
  * Description: Gallery directive with methods to add images, shuffle order and binding properties
  */
@@ -15,27 +15,27 @@ module dBApp.gallery {
     }
 
     class GalleryDirective implements angular.IDirective {
-        scope = {
+        scope: any = {
             'currentIndex': '=dbGalleryCurrentIndex',
             'images': '=dbGalleryModel'
         };
-        restrict: string = "A";
-        templateUrl: string = "components/gallery/gallery.html";
+        restrict: string = 'A';
+        templateUrl: string = 'components/gallery/gallery.html';
 
         private galleryFilesInformation: string = 'assets/gallery.json';
-        private autoShufleImagesEvent: Function = null;
+        private autoShufleImagesEvent: Function = undefined;
 
-        link = (scope: IGalleryDirectiveScope, element: angular.IAugmentedJQuery, attrs: angular.IAttributes) => {
+        link: any = (scope: IGalleryDirectiveScope, element: angular.IAugmentedJQuery, attrs: angular.IAttributes): void => {
             scope.shuffleImages = () => {
-                var m = scope.images.length,
-                    t, i;
+                let m: number = scope.images.length,
+                    t: any, i: number;
 
-                // While there remain elements to shuffle
+                // while there remain elements to shuffle
                 while (m) {
-                    // Pick a remaining element…
+                    // pick a remaining element…
                     i = Math.floor(Math.random() * m--);
 
-                    // And swap it with the current element.
+                    // and swap it with the current element.
                     t = scope.images[m];
                     scope.images[m] = scope.images[i];
                     scope.images[i] = t;
@@ -44,23 +44,23 @@ module dBApp.gallery {
 
             scope.enableAutoShufleImages = (enable: boolean) => {
                 if (enable) {
-                    this.autoShufleImagesEvent = this.$rootScope.$on('$stateChangeStart', (event, next, current) => {
+                    this.autoShufleImagesEvent = this.$rootScope.$on('$stateChangeStart', () => {
                         scope.shuffleImages();
                     });
                 } else {
-                    if (this.autoShufleImagesEvent !== null) {
+                    if (this.autoShufleImagesEvent) {
                         this.autoShufleImagesEvent();
                     }
                 }
             };
 
-            // Get images from json file
-            this.$http.get(this.galleryFilesInformation).then((data) => {
+            // get images from json file
+            this.$http.get(this.galleryFilesInformation).then((data: any) => {
                 scope.images = data.data;
                 scope.shuffleImages();
             });
 
-            // Auto shuffle on page change
+            // auto shuffle on page change
             scope.enableAutoShufleImages(true);
         };
 
@@ -69,5 +69,6 @@ module dBApp.gallery {
 
     angular
         .module('dBApp.gallery')
-        .directive('dbGallery', ['$rootScope', '$http', ($r, $h) => new GalleryDirective($r, $h)]);
+        .directive('dbGallery', ['$rootScope', '$http',
+            ($r: IGalleryDirectiveScope, $h: angular.IHttpService) => new GalleryDirective($r, $h)]);
 }

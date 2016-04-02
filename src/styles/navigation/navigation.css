@@ -1,0 +1,108 @@
+.navbar-db li.active {
+  background-color: #fff;
+  opacity: 0.6;
+}
+
+.navbar-db {
+    margin-top: 10px;
+}
+
+/* Under MD view port */
+@media (max-width: 991px) {
+    .navbar ul li a {
+        padding-left: 0.6em;
+        padding-right: 0.6em;
+    }  
+    .navbar {
+        min-height: 0px;
+    }
+}
+
+/* Above SM view port */
+@media (min-width: 768px) {
+    .navbar-db {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        margin-bottom: 0px;
+    }
+    
+    .navbar-db .navbar-collapse {
+        margin-left: 87px;
+    }
+    .navbar-db .navbar-brand {
+        padding: 0;
+        float: none; 
+    }
+    
+    .navbar-db .navbar-brand img {
+        height: 60px;
+    }
+    
+    .navbar-db ul li a {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Under XS view port */
+@media (max-width: 767px) {
+    .content {
+        padding-left: 110px;
+    }
+    
+    .navbar-db.row {
+        margin: 0;
+    }
+    
+    .navbar-db {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        height: 100vh;
+    }  
+    
+    .navbar-db .navbar-header {
+        max-width: 80px;
+    }
+    
+    .navbar-db .navbar-brand {
+        padding: 0;
+        float: none; 
+    }
+    
+    .navbar-db .navbar-brand img {
+        width: 80px;
+    }
+    
+    .navbar-db .navbar-toggle {
+        margin: 0;
+        float: none;
+    }
+    
+    .navbar-db .navbar-collapse {
+        width: 80px;
+    }
+    
+    .navbar-db .navbar-collapse ul li a {
+        white-space: nowrap;
+    }
+    
+    .navbar-db .navbar-collapse.in {
+        width: 120px;
+    }
+    
+    .navbar-db .navbar-collapse {
+        margin: 0;
+        padding: 0;
+    }
+        
+    .navbar-db ul {
+        display: block;
+    }
+
+    .navbar-db ul li a {
+        padding: 0.9em;
+        text-align: left;
+    }
+}
