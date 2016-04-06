@@ -5,7 +5,7 @@
  * Skin Name: dB-balance
  *
  * Copyright (c) 2015 Bjørn Sørensen
- 
+
  * Author: Bjørn Sørensen
  * Skin Version: 2.0 (jPlayer 2.9.2)
  * Date: Juli 5th 2015
@@ -18,7 +18,7 @@ div.jp-jplayer {
 
 div.jp-audio {
     /* Hoved div til afspilleren */
-    
+
     position: relative;
     border: 0px;
     font-size: 1em;
@@ -30,14 +30,14 @@ div.jp-audio {
 
 div.jp-progress {
     /* Indeholder progress baren */
-    
+
     width: 100%;
     height: 8px;
 }
 
 div.jp-seek-bar {
     /* Progress bar, definition til play baren */
-    
+
     background: #d8d8d8;
     width: 0px;
     height: 100%;
@@ -46,7 +46,7 @@ div.jp-seek-bar {
 
 div.jp-play-bar {
     /* Play bar, forloeben tid */
-    
+
     background: green;
     width: 0px;
     height: 100%;
@@ -166,7 +166,7 @@ div.jp-playlist span.jp-title {
 
 div.jp-interface {
     /* Indeholder knapper, progressbar osv. */
-    
+
     width: 100%;
     height: 100%;
 }

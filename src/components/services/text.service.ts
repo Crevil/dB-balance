@@ -18,7 +18,7 @@ module dBApp.services {
         apiUrl: string;
 
         constructor(private $http: angular.IHttpService) {
-            this.apiUrl = 'api/';
+            this.apiUrl = 'assets/api/';
         }
 
         getPageTexts(id: string): angular.IHttpPromise<any> {

@@ -22,28 +22,20 @@
             "**/*.html"
         ]
     },
-    "images": {
+    "javascript": {
         "files": [
-            "assets/images/**/*"
+            "**/*.js"
         ]
     },
     "typescript": {
         "files": [
             "**/*.ts"
-        ],
-        "main": false
-    },
-    "api": {
-        "files": [
-            "api/**/*.json"
-        ],
-        "main": false
+        ]
     },
     "assets": {
         "files": [
             "assets/**/*.*"
-        ],
-        "main": false
+        ]
     }
   },
   "paths": {
@@ -52,7 +44,7 @@
       "build": "build/",
       "maps": "maps/",
       "assets": "assets/",
-      "api": "api/"
+      "fonts": "fonts/"
   },
   "config": {
     "devUrl": "http://localhost:8080"
