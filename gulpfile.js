@@ -128,7 +128,7 @@ gulp.task('styles', function() {
             .pipe(cssTasksInstance));
     });
     return merged
-        .pipe(writeToManifest('styles'));
+        .pipe(writeToManifest(path.styles));
 });
 
 // js processing pipeline

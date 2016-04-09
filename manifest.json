@@ -45,7 +45,8 @@
       "build": "build/",
       "maps": "maps/",
       "assets": "assets/",
-      "fonts": "fonts/"
+      "fonts": "fonts/",
+      "styles": "styles/"
   },
   "config": {
     "devUrl": "http://localhost:8080"
