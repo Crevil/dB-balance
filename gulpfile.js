@@ -110,9 +110,10 @@ var writeToManifest = function(directory) {
 };
 
 // gulp styles
-// compiles, combines
+// wires bower dependencies, compiles, combines
 // if --production flag is set precompiler errors fails task
-gulp.task('styles', ['wiredep'], function() {
+gulp.task('styles', function() {
+    var wiredep = require('wiredep').stream;
     var merged = merge();
     manifest.forEachDependency('css', function(dep) {
         var cssTasksInstance = cssTasks(dep.name);
@@ -122,23 +123,12 @@ gulp.task('styles', ['wiredep'], function() {
                 this.emit('end');
             });
         }
-        merged.add(gulp.src(dep.globs, { base: 'styles' })
+        merged.add(gulp.src(dep.globs)
+            .pipe(wiredep())
             .pipe(cssTasksInstance));
     });
     return merged
         .pipe(writeToManifest('styles'));
-});
-
-// gulp wiredep
-// automatically inject Less and Sass Bower dependencies at bower:scss tags
-gulp.task('wiredep', function() {
-    var wiredep = require('wiredep').stream;
-    return gulp.src(project.css)
-        .pipe(wiredep())
-        .pipe(changed(path.source + 'styles', {
-            hasChanged: changed.compareSha1Digest
-        }))
-        .pipe(gulp.dest(path.source + 'styles'));
 });
 
 // js processing pipeline
