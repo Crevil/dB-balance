@@ -6,34 +6,34 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "node/node.d.ts": {
-      "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     },
     "angularjs/angular.d.ts": {
-      "commit": "fc0f5a34aaadbea0eb2901d06db775f1960ba17a"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     },
     "angular-ui-router/angular-ui-router.d.ts": {
-      "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     },
     "angularjs/angular-animate.d.ts": {
-      "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     },
     "jquery/jquery.d.ts": {
-      "commit": "fc0f5a34aaadbea0eb2901d06db775f1960ba17a"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     },
     "angularjs/angular-resource.d.ts": {
-      "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     },
     "angularjs/angular-sanitize.d.ts": {
-      "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     },
     "angular-scroll/angular-scroll.d.ts": {
-      "commit": "3db73cb78cb08ef2315d756d1a614fda84b26df3"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     },
     "fbsdk/fbsdk.d.ts": {
-      "commit": "fc0f5a34aaadbea0eb2901d06db775f1960ba17a"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     },
     "ng-facebook/ng-facebook.d.ts": {
-      "commit": "fc0f5a34aaadbea0eb2901d06db775f1960ba17a"
+      "commit": "2712dd1e88d5a3f940592bc5d7102c2ab4eb39a7"
     }
   }
 }

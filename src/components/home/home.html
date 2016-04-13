@@ -1,36 +1,36 @@
 <section>
     <div class="row row-margin row-flex" ng-repeat="text in vm.data.texts">
-        <div    ng-class-even="{'col-xs-push-5': vm.gallery.images.length > $index}" 
+        <div    ng-class-even="{'col-xs-push-5': vm.gallery.images.length > $index}"
                 ng-class="{'col-xs-12'  : vm.gallery.images.length < $index,
-                           'col-xs-7'   : vm.gallery.images.length > $index || $first}" 
+                           'col-xs-7'   : vm.gallery.images.length > $index || $first}"
                 class="rounded-box color-box">
 
                 <div class="padding-box">
                     <h1 ng-if="text.header != undefined && text.header != ''">{{text.header}}</h1>
-                    
+
                     <p ng-bind-html="text.text | lineBreakFilter | toTrustedFilter"></p>
                 </div>
         </div>
 
         <div ng-if="$first" class="padding-right-00 col-xs-5">
              <div class="rounded-box color-box padding-box"
-                  db-facebook-feed 
+                  db-facebook-feed
                   db-facebook-url="vm.facebookUrl"
                   db-max-posts="vm.facebookPosts"
                   >
              </div>
         </div>
-            
-        <div    ng-if="!$first && (vm.gallery.images.length > $index || text.image != undefined)" 
+
+        <div    ng-if="!$first && (vm.gallery.images.length > $index || text.image != undefined)"
                 ng-class-even="'col-xs-pull-7 padding-left-00'"
-                ng-class-odd="'padding-right-00'" 
+                ng-class-odd="'padding-right-00'"
                 class="col-xs-5">
 
-            <img    class="overflow-hide img-responsive gallery-link center-block rounded-box" 
-                    ng-src="{{vm.gallery.images[$index - 1].source}}" 
-                    ng-click="vm.gallery.setCurrentIndex($index - 1); vm.visibility.toggleGallery(true)" 
+            <img    class="overflow-hide img-responsive gallery-link center-block rounded-box"
+                    ng-src="{{vm.gallery.images[$index - 1].source}}"
+                    ng-click="vm.gallery.setCurrentIndex($index - 1); vm.visibility.toggleGallery(true)"
                     alt="{{vm.gallery.images[$index - 1].description}}"
-                    title="{{vm.gallery.images[$index - 1].description}}" 
+                    title="{{vm.gallery.images[$index - 1].description}}"
                     db-scroll-to="#gallery"
                     db-scroll-to-item
                     />
