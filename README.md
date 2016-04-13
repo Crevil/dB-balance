@@ -1,5 +1,5 @@
 # dB-balance
-AngularJS website for the recording studio dB-balance
+AngularJS website for the recording studio [dB-balance](http://www.db-balance.dk).
 
 ## Install
 Install dependencies and type definitions with npm.
@@ -7,14 +7,19 @@ Install dependencies and type definitions with npm.
 npm install
 ```
 
+## Building
+Build the application with the default gulp task.
+```
+gulp
+```
+
+There are several gulp tasks to ease development.
+See `gulpfile.js` for details.
+
 ## Running the application
 Start a local node.js server with npm.
 ```
-npm start
+npm run start
 ```
 
-Navigate to http://localhost:8000/dest
-
-## Development
-There are several gulp tasks to ease development.
-See gulpfile.js for details.
+Navigate to http://localhost:8080/
