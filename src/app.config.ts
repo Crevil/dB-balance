@@ -1,6 +1,6 @@
 /// <reference path="../typings/tsd.d.ts" />
 
-module dBApp {
+namespace dBApp {
     'use strict';
 
     interface IAppRootScope extends angular.IRootScopeService {

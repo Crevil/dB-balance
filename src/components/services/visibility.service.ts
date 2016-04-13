@@ -3,7 +3,7 @@
  * Service: visibility
  * Description: Handle page visibility
  */
-module dBApp.services {
+namespace dBApp.services {
     'use strict';
 
     export interface IVisibilityService {

@@ -5,7 +5,7 @@
  * Directive: facebookfeed
  * Description: Get facebook feed and present the posts
  */
-module dBapp.facebookfeed {
+namespace dBapp.facebookfeed {
     'use strict';
 
     export interface IFacebookFeedDirectiveScope extends angular.IScope {
@@ -131,6 +131,6 @@ module dBapp.facebookfeed {
     }
 
     angular
-        .module('dBApp.facebookfeed')
+        .module('dBApp.facebookfeed', [])
         .directive('dbFacebookFeed', dBapp.facebookfeed.facebookFeed);
 }

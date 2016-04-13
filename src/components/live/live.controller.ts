@@ -1,9 +1,10 @@
 /// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../services/data.service.ts" />
 /*
  * Name: liveController
  * Description: retreive data from API, set title and present data according to URL
  */
-module dBApp.live {
+namespace dBApp.live {
     'use strict';
 
     export interface ILiveController {
@@ -11,14 +12,14 @@ module dBApp.live {
     }
 
     export class LiveController {
-        static $inject: Array<string> = ['$location', 'textService'];
+        static $inject: Array<string> = ['$location', 'dataService'];
 
         data: any;
 
-        constructor($location: angular.ILocationService, textService: services.ITextService) {
+        constructor($location: angular.ILocationService, dataService: services.IDataService) {
             let location: string = $location.path();
 
-            textService.getPageTexts(location.substring(1, location.length))
+            dataService.getPageTexts(location.substring(1, location.length))
                 .then((data: any) => {
                     this.data = data.data;
                 });
@@ -26,6 +27,14 @@ module dBApp.live {
     }
 
     angular
-        .module('dBApp.live')
-        .controller('liveController', LiveController);
+        .module('dBApp.live', [])
+        .controller('liveController', LiveController)
+        .config(['$stateProvider', ($stateProvider: angular.ui.IStateProvider) => {
+            $stateProvider.state('live', {
+                controller: LiveController,
+                controllerAs: 'vm',
+                templateUrl: 'components/live/live.html',
+                url: '/live'
+            });
+        }]);
 }

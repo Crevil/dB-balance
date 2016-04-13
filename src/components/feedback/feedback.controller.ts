@@ -1,9 +1,12 @@
 /// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../services/data.service.ts" />
+/// <reference path="../services/gallery.service.ts" />
+/// <reference path="../services/visibility.service.ts" />
 /*
  * Name: feedbackController
  * Description: Retreive data from API
  */
-module dBApp.feedback {
+namespace dBApp.feedback {
     'use strict';
 
     export interface IFeedbackController {
@@ -13,7 +16,7 @@ module dBApp.feedback {
     }
 
     export class FeedbackController {
-        static $inject: Array<string> = ['galleryService', 'visibilityService', 'textService'];
+        static $inject: Array<string> = ['galleryService', 'visibilityService', 'dataService'];
         gallery: services.IGalleryService;
         visibility: services.IVisibilityService;
         data: any;
@@ -22,17 +25,25 @@ module dBApp.feedback {
         constructor(
             galleryService: services.IGalleryService,
             visibilityService: services.IVisibilityService,
-            textService: services.ITextService) {
+            dataService: services.IDataService) {
             this.gallery = galleryService;
             this.visibility = visibilityService;
 
-            textService.getRandomFeedback(5).then((data: any) => {
+            dataService.getRandomFeedback(5).then((data: any) => {
                 this.data = data.data;
             });
         }
     }
 
     angular
-        .module('dBApp.feedback')
-        .controller('feedbackController', FeedbackController);
+        .module('dBApp.feedback', [])
+        .controller('feedbackController', FeedbackController)
+        .config(['$stateProvider', ($stateProvider: angular.ui.IStateProvider) => {
+            $stateProvider.state('feedback', {
+                controller: FeedbackController,
+                controllerAs: 'vm',
+                templateUrl: 'components/feedback/feedback.html',
+                url: '/feedback'
+            });
+        }]);
 }

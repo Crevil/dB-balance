@@ -1,9 +1,10 @@
 /// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../services/visibility.service.ts" />
 /*
  * Directive: Navigation
  * Description: Navigation directive
 */
-module dBApp.directives {
+namespace dBApp.directives {
     'use strict';
 
     interface INavigationDirectiveScope extends angular.IScope {

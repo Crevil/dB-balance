@@ -3,7 +3,7 @@
  * Service: gallery
  * Description: Holds data related to dbGallery directive for inter-controller comunication
  */
-module dBApp.services {
+namespace dBApp.services {
     'use strict';
 
     export interface IGalleryService {

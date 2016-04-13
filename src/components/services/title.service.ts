@@ -3,7 +3,7 @@
  * Service: title
  * Description: Retreive page titles from API
  */
-module dBApp.services {
+namespace dBApp.services {
     'use strict';
 
     export interface ITitleService {

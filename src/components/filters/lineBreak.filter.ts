@@ -3,7 +3,7 @@
  * Name: lineBreak
  * Description: Replace \n with <br /> tags
  */
-module dBApp.filters {
+namespace dBApp.filters {
     'use strict';
 
     angular

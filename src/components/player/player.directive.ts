@@ -1,5 +1,6 @@
 /// <reference path="../../../typings/tsd.d.ts" />
-module dBApp.directives.player {
+/// <reference path="jPlayer.d.ts" />
+namespace dBApp.directives.player {
     'use strict';
 
     export interface IPlayerDirective extends angular.IDirective {
@@ -12,21 +13,6 @@ module dBApp.directives.player {
 
     export interface IPlayerDirectiveAttributes extends angular.IAttributes {
         dbPlayerStatus: string;
-    }
-
-    interface IjPlayerOptions {
-        cssSelector: {
-            jPlayer: string;
-            cssSelectorAncestor: string;
-        };
-        options: {
-            playlistOptions: {
-                enableRemoveControls: boolean;
-                displayTime: string;
-            };
-            supplied: string;
-        };
-        playlist: any[];
     }
 
     function playerDirective($resource: angular.resource.IResourceService): IPlayerDirective {
@@ -47,7 +33,7 @@ module dBApp.directives.player {
                 return;
             }
 
-            let options: IjPlayerOptions = {
+            let options: { cssSelector: jPlayer.IjPlayerCssSelector, options: jPlayer.IjPlayerOptions, playlist: any[]} = {
                 'cssSelector': {
                     'jPlayer': '#jquery_jplayer',
                     'cssSelectorAncestor': '#jp_container'
@@ -87,7 +73,7 @@ module dBApp.directives.player {
 
             scope.$watch('status', (newValue: string, oldValue: string) => {
                 if (newValue !== oldValue) {
-                    let p: angular.IAugmentedJQuery = angular.element(player.cssSelector.jPlayer);
+                    let p: IPlayerAugmentedJQuery = angular.element(player.cssSelector.jPlayer) as IPlayerAugmentedJQuery;
                     switch (newValue) {
                         case 'play':
                             p.jPlayer('play');
@@ -101,6 +87,10 @@ module dBApp.directives.player {
 
         }
     };
+
+    interface IPlayerAugmentedJQuery extends angular.IAugmentedJQuery {
+        jPlayer(action: string): void;
+    }
 
     angular
         .module('dBApp.directives')

@@ -3,7 +3,7 @@
  * Name: toTrusted
  * Description: Trust data as html
  */
-module dBApp.filters {
+namespace dBApp.filters {
     'use strict';
 
     angular

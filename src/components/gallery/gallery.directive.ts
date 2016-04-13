@@ -3,7 +3,7 @@
  * Directive: gallery
  * Description: Gallery directive with methods to add images, shuffle order and binding properties
  */
-module dBApp.gallery {
+namespace dBApp.gallery {
     'use strict';
 
     export interface IGalleryDirectiveScope extends angular.IScope {
@@ -68,7 +68,7 @@ module dBApp.gallery {
     }
 
     angular
-        .module('dBApp.gallery')
+        .module('dBApp.gallery', ['ngTouch'])
         .directive('dbGallery', ['$rootScope', '$http',
             ($r: IGalleryDirectiveScope, $h: angular.IHttpService) => new GalleryDirective($r, $h)]);
 }

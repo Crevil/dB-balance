@@ -3,7 +3,7 @@
  * Directive: ScrollToItem
  * Description: Directive to scroll to an element identified by a jQuery selector
  */
-module dBApp.directives {
+namespace dBApp.directives {
     'use strict';
 
     interface IScrollToItemDirectiveScope extends angular.IScope {

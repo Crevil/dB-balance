@@ -3,7 +3,7 @@
  * Name: filters module router
  * Description: Create module
  */
-module dBApp.filters {
+namespace dBApp.filters {
     'use strict';
 
     angular

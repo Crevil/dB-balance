@@ -1,9 +1,12 @@
 /// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../services/gallery.service.ts" />
+/// <reference path="../services/visibility.service.ts" />
+/// <reference path="../services/title.service.ts" />
 /*
 * Name: shellController
 * Description: Static data and page setup
 */
-module dBApp.core {
+namespace dBApp.core {
     'use strict';
 
     interface IKeyupEvent {
@@ -102,6 +105,14 @@ module dBApp.core {
         }
     }
 
-    angular.module('dBApp.core')
+    angular.module('dBApp.core', [
+            'angular-carousel',
+            'angulike',
+            'ngFacebook',
+            'ngAnimate',
+            'ngSanitize',
+            'ui.router',
+            'ui.bootstrap'
+        ])
         .controller('coreController', CoreController);
 }

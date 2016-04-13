@@ -1,19 +1,19 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 /*
- * Service: text
+ * Service: data
  * Description: Retreive page texts from API
  */
-module dBApp.services {
+namespace dBApp.services {
     'use strict';
 
-    export interface ITextService {
+    export interface IDataService {
         getPageTexts(id: string): angular.IHttpPromise<any>;
 
         getAllFeedback(): angular.IHttpPromise<any>;
         getRandomFeedback(limit: number): angular.IHttpPromise<any>;
     }
 
-    export class TextService implements ITextService {
+    export class DataService implements IDataService {
         // apiUrl: string = 'http://www.db-balance.dk/v4.0/api/';
         apiUrl: string;
 
@@ -42,5 +42,5 @@ module dBApp.services {
 
     angular
         .module('dBApp.services')
-        .factory('textService', ['$http', ($h: angular.IHttpService) => new TextService($h)]);
+        .factory('dataService', ['$http', ($h: angular.IHttpService) => new DataService($h)]);
 }

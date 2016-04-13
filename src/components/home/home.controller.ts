@@ -1,9 +1,12 @@
 /// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../services/data.service.ts" />
+/// <reference path="../services/gallery.service.ts" />
+/// <reference path="../services/visibility.service.ts" />
 /*
  * Name: homeController
  * Description: Retreive data from API, set title and present data according to URL
  */
-module dBApp.home {
+namespace dBApp.home {
     'use strict';
 
     export interface IHomeController {
@@ -16,7 +19,7 @@ module dBApp.home {
     }
 
     export class HomeController implements IHomeController {
-        static $inject: Array<string> = ['$location', 'textService', 'galleryService', 'visibilityService'];
+        static $inject: Array<string> = ['$location', 'dataService', 'galleryService', 'visibilityService'];
 
         data: { texts: any[] };
         gallery: services.IGalleryService;
@@ -28,7 +31,7 @@ module dBApp.home {
 
         constructor(
             $location: angular.ILocationService,
-            textService: services.ITextService,
+            dataService: services.IDataService,
             galleryService: services.IGalleryService,
             visibilityService: services.IVisibilityService) {
             this.gallery = galleryService;
@@ -36,7 +39,7 @@ module dBApp.home {
 
             let location: string = $location.path();
 
-            textService
+            dataService
                 .getPageTexts(location.substring(1, location.length))
                 .then((data: any) => {
                     this.data = data.data;
@@ -48,6 +51,16 @@ module dBApp.home {
     }
 
     angular
-        .module('dBApp.home')
-        .controller('homeController', HomeController);
+        .module('dBApp.home', [
+            'dBApp.facebookfeed'
+        ])
+        .controller('homeController', HomeController)
+        .config(['$stateProvider', ($stateProvider: angular.ui.IStateProvider) => {
+            $stateProvider.state('home', {
+                controller: HomeController,
+                controllerAs: 'vm',
+                templateUrl: 'components/home/home.html',
+                url: '/'
+            });
+        }]);
 }

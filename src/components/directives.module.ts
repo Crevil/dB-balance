@@ -3,7 +3,7 @@
  * Name: directives module router
  * Description: Create module
  */
-module dBApp.directives {
+namespace dBApp.directives {
     'use strict';
 
     angular
