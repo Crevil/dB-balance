@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/main.d.ts" />
 /// <reference path="../services/data.service.ts" />
 /*
  * Name: ContactController

@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../typings/main.d.ts" />
 /*
  * Directive: ScrollToItem
  * Description: Directive to scroll to an element identified by a jQuery selector

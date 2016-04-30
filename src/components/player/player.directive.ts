@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/main.d.ts" />
 /// <reference path="jPlayer.d.ts" />
 namespace dBApp.directives.player {
     'use strict';

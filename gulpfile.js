@@ -22,7 +22,7 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var ts = require('gulp-typescript');
 var tslint = require('gulp-tslint');
-var tsd = require('gulp-tsd');
+var typings = require('gulp-typings');
 var uglify = require('gulp-uglify');
 
 var manifest = require('asset-builder')('./manifest.json');
@@ -187,7 +187,7 @@ gulp.task('jshint', function() {
         [
             'package.json',
             'bower.json',
-            'tsd.json',
+            'typings.json',
             'manifest.json',
             'gulpfile.js'
         ]))
@@ -249,13 +249,11 @@ gulp.task('assets', function() {
         .pipe(browserSync.stream());
 });
 
-// gulp tsd
+// gulp typings
 // install typescript definitions
-gulp.task('tsd', function(done) {
-    tsd({
-        command: 'reinstall',
-        config: './tsd.json'
-    }, done);
+gulp.task('typings', function(done) {
+    return gulp.src('./typings.json')
+        .pipe(typings());
 });
 
 // gulp clean
@@ -276,13 +274,13 @@ gulp.task('watch', function() {
     gulp.watch([path.source + '**/*.ts', path.source + '**/*.js'], ['scripts']);
     gulp.watch([path.source + path.assets + '**/*'], ['assets']);
     gulp.watch([path.source + '**/*.html'], ['html']);
-    gulp.watch(['bower.json', 'manifest.json', 'tsd.json'], ['build']);
+    gulp.watch(['bower.json', 'manifest.json', 'typings.json'], ['build']);
 });
 
 // gulp build
 // build without clean
 gulp.task('build', function(callback) {
-    runSequence('tsd', 'styles',
+    runSequence('typings', 'styles',
         'scripts',
         ['fonts', 'html', 'assets'],
         callback);

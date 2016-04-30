@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/main.d.ts" />
 /*
  * Directive: gallery
  * Description: Gallery directive with methods to add images, shuffle order and binding properties

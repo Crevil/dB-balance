@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/main.d.ts" />
 /*
  * Service: gallery
  * Description: Holds data related to dbGallery directive for inter-controller comunication
